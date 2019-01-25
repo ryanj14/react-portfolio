@@ -5,6 +5,7 @@ import Title from './Title';
 import Skills from './Skills';
 import Projects from './Projects';
 import Education from './Education';
+import Current from './Current';
 
 const App = () => {
   return(
@@ -14,6 +15,7 @@ const App = () => {
       <Skills/>
       <Projects/>
       <Education/>
+      <Current/>
     </div>
   );
 };
