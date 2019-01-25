@@ -4,6 +4,7 @@ import NavBar from './NavBar';
 import Title from './Title';
 import Skills from './Skills';
 import Projects from './Projects';
+import Education from './Education';
 
 const App = () => {
   return(
@@ -12,6 +13,7 @@ const App = () => {
       <Title/>
       <Skills/>
       <Projects/>
+      <Education/>
     </div>
   );
 };
