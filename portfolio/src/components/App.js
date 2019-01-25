@@ -3,6 +3,7 @@ import React from 'react';
 import NavBar from './NavBar';
 import Title from './Title';
 import Skills from './Skills';
+import Projects from './Projects';
 
 const App = () => {
   return(
@@ -10,6 +11,7 @@ const App = () => {
       <NavBar/>
       <Title/>
       <Skills/>
+      <Projects/>
     </div>
   );
 };
