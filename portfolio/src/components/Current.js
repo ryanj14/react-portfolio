@@ -3,10 +3,10 @@ import '../styles/style.min.css'
 
 const Current = () => {
   return(
-    <section class="current">
+    <section className="current">
       <article>
         <h3>Current</h3>
-        <div class="currentStory">
+        <div className="currentStory">
             <p>
               Webapp - I'm currently working on a coffee webapp with my good friend Akemi. 
               We're using technologies such as React.js, Redux, and Firebase.
