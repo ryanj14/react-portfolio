@@ -1,4 +1,5 @@
 import React from 'react';
+import '../styles/style.min.css'
 
 const NavBar = () => {
   return(
