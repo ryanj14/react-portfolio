@@ -6,6 +6,8 @@ import Skills from './Skills';
 import Projects from './Projects';
 import Education from './Education';
 import Current from './Current';
+import Contact from './Contact';
+import Footer from './Footer';
 
 const App = () => {
   return(
@@ -16,6 +18,8 @@ const App = () => {
       <Projects/>
       <Education/>
       <Current/>
+      <Contact/>
+      <Footer/>
     </div>
   );
 };
