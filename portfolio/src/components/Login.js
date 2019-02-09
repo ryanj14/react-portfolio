@@ -6,10 +6,11 @@ class Login extends React.Component {
 
   handleFormSubmit(e) {
     e.preventDefault();
+    console.log(this.props.userInfo);
   }
 
   render() {
-    console.log(this.props);
+    console.log(this.props.userInfo);
     return(
       <form className="ui form">
         <div className="field">
@@ -40,4 +41,8 @@ class Login extends React.Component {
   }
 }
 
-export default connect(null, { user, password })(Login);
+const mapStateToProps = (state) => {
+  return { userInfo: state.userLogin };
+}
+
+export default connect(mapStateToProps, { user, password })(Login);
