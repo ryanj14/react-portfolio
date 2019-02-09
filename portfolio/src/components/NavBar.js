@@ -27,7 +27,7 @@ const NavBar = () => {
             <a class="nav-link" href="https://github.com/ryanj14">Github Profile</a>
           </li>
           <li className="nav-item">
-            <a className="nav-link" href="http://garelryan.ca">Craigslist Clone</a>
+            <a className="nav-link" href="https://garelryan.000webhostapp.com/index.php">Craigslist Clone</a>
           </li>
           <li className="nav-item">
             <a className="nav-link" href="https://docs.google.com/document/d/1hye3N65a7Ot9HToe-BHYB3jIsWHtZxSJxuMVHP58FEg/edit?usp=sharing">CV</a>
