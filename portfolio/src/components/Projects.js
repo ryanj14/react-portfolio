@@ -36,11 +36,7 @@ const Projects = () => {
             The front page works with some of the links actually connect to their respective category page.
             The website uses HTML5, CSS3, PHP, MySQL.
           </p>
-          <em>
-            It should be noted that I'm in the process of transferring hosting server providers.
-            The current server is not HTTPS secure.
-          </em><br/>
-          <a href="http://garelryan.ca">Craigslist Clone Link</a><br/>
+          <a href="https://garelryan.000webhostapp.com/index.php">Craigslist Clone Link</a><br/>
           <a href="https://github.com/GBucknor/CraigslistClone">Craigslist Clone Github Repo</a>  
         </article>
         <article>
