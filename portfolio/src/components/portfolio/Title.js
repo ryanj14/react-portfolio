@@ -1,6 +1,6 @@
 import React from 'react';
-import '../styles/style.min.css';
-import undraw from "../img/undraw_developer_activity_bv83.png";
+import '../../styles/style.min.css';
+import undraw from "../../img/undraw_developer_activity_bv83.png";
 
 const Title = () => {
   return(

@@ -1,5 +1,5 @@
 import React from 'react';
-import '../styles/style.min.css'
+import '../../styles/style.min.css'
 
 const Current = () => {
   return(
