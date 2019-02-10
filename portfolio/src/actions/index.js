@@ -3,7 +3,8 @@ import {
   PASSWORD,
   TITLE,
   AUTHOR,
-  BLOG
+  BLOG,
+  DATE
 } from './types';
 import { login } from '../api';
 
@@ -39,6 +40,13 @@ export const blog = (blog) => {
   return {
     type: BLOG,
     payload: blog
+  };
+}
+
+export const date = (date) => {
+  return {
+    type: DATE,
+    payload: date
   };
 }
 
