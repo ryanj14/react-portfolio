@@ -2,7 +2,7 @@ import {
   USERNAME,
   PASSWORD
 } from './types';
-import api from '../api';
+import { login } from '../api';
 
 export const user = (username) => {
   return {
@@ -19,7 +19,7 @@ export const password = (password) => {
 };
 
 export const checkUser = ( user, password ) => dispatch => {
-  api({
+  login({
     method: 'post',
     url: '/user.php',
     data: {

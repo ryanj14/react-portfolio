@@ -1,7 +1,6 @@
 import axios from 'axios';
 
-
-export default axios.create({
+export const login = axios.create({
   baseURL: 'http://localhost/',
   responseType: 'json'
 });
