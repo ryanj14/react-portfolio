@@ -5,13 +5,9 @@ class BlogCreate extends React.Component {
   render() {
     return (
       <div className="ui form">
-        <div className="ten wide field">
+        <div className="field">
           <label>Story</label>
           <textarea></textarea>
-        </div>
-        <div className="field">
-          <label>Short Text</label>
-          <textarea rows="4"></textarea>
         </div>
       </div>
     );
