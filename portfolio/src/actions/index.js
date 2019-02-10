@@ -4,9 +4,10 @@ import {
   TITLE,
   AUTHOR,
   BLOG,
-  DATE
+  DATE,
+  CREATE_POST
 } from './types';
-import { login } from '../api';
+import { login , blogs } from '../api';
 
 export const user = (username) => {
   return {
@@ -49,6 +50,11 @@ export const date = (date) => {
     payload: date
   };
 }
+
+export const createBlogPost = formValues => async dispatch => {
+  const response = await blogs.post('/blog', { ...formValues });
+  dispatch({ type: CREATE_POST, payload: response.data });
+};
 
 export const checkUser = ( user, password ) => dispatch => {
   login({

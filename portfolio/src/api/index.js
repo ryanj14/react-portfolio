@@ -5,6 +5,6 @@ export const login = axios.create({
   responseType: 'json'
 });
 
-export const blog = axios.create({
+export const blogs = axios.create({
   baseURL: 'http://localhost:3001'
 });
