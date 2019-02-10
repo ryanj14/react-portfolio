@@ -1,6 +1,9 @@
 import { 
   USERNAME,
-  PASSWORD
+  PASSWORD,
+  TITLE,
+  AUTHOR,
+  BLOG
 } from './types';
 import { login } from '../api';
 
@@ -17,6 +20,27 @@ export const password = (password) => {
     payload: password
   };
 };
+
+export const title = (title) => {
+  return {
+    type: TITLE,
+    payload: title
+  };
+}
+
+export const author = (author) => {
+  return {
+    type: AUTHOR,
+    payload: author
+  };
+};
+
+export const blog = (blog) => {
+  return {
+    type: BLOG,
+    payload: blog
+  };
+}
 
 export const checkUser = ( user, password ) => dispatch => {
   login({
