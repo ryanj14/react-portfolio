@@ -1,12 +1,14 @@
 import React from 'react';
-import { user, password } from '../actions';
+import { user, password, checkUser } from '../actions';
 import { connect } from 'react-redux';
 
 class Login extends React.Component {
 
   handleFormSubmit(e) {
+    let user = this.props.userInfo.user;
+    let password = this.props.userInfo.password;
     e.preventDefault();
-    console.log(this.props.userInfo);
+    this.props.checkUser(user, password);
   }
 
   render() {
@@ -45,4 +47,4 @@ const mapStateToProps = (state) => {
   return { userInfo: state.userLogin };
 }
 
-export default connect(mapStateToProps, { user, password })(Login);
+export default connect(mapStateToProps, { user, password, checkUser })(Login);

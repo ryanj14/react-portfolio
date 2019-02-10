@@ -2,6 +2,7 @@ import {
   USERNAME,
   PASSWORD
 } from './types';
+import api from '../api';
 
 export const user = (username) => {
   return {
@@ -16,3 +17,17 @@ export const password = (password) => {
     payload: password
   };
 };
+
+export const checkUser = ( user, password ) => dispatch => {
+  api({
+    method: 'post',
+    url: '/user.php',
+    data: {
+      user,
+      password
+    }
+  })
+  .catch(function (error) {
+    dispatch(console.log(error));
+  });
+}
