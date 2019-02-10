@@ -4,7 +4,8 @@ import {
   title,
   author,
   blog,
-  date
+  date,
+  createBlogPost
 } from '../../actions';
 
 class BlogCreate extends React.Component {
@@ -16,7 +17,7 @@ class BlogCreate extends React.Component {
 
   handleFormSubmit(e) {
     e.preventDefault();
-    console.log(this.props);
+    this.props.createBlogPost(this.props.blogInfo);
   }
 
   render() {
@@ -62,4 +63,4 @@ const mapStateToProps = (state) => {
   };
 }
 
-export default connect(mapStateToProps, { title, author, blog, date })(BlogCreate);
+export default connect(mapStateToProps, { title, author, blog, date, createBlogPost })(BlogCreate);
