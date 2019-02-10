@@ -3,3 +3,4 @@ export const PASSWORD = 'PASSWORD';
 export const TITLE = 'TITLE';
 export const BLOG = 'BLOG';
 export const AUTHOR = 'AUTHOR';
+export const DATE = 'DATE';
