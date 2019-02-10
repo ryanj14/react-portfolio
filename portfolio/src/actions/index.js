@@ -58,7 +58,7 @@ export const createBlogPost = formValues => async dispatch => {
 };
 
 export const fetchBlogPosts = () => async dispatch => {
-  const response = await blogs.get('/streams');
+  const response = await blogs.get('/blog');
   dispatch({ type: FETCH_POSTS, payload: response.data });
 };
 

@@ -1,10 +1,11 @@
-import { BrowserRouter, Route } from 'react-router-dom';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import React from 'react';
 import NavBar from './NavBar';
 import Root from './portfolio/Root';
 import Footer from './Footer';
 import Login from './Login';
-import Blog from './blog/BlogCreate';
+import BlogCreate from './blog/BlogCreate';
+import BlogPosts from './blog/BlogPosts';
 
 const App = () => {
   return(
@@ -12,9 +13,12 @@ const App = () => {
       <NavBar/>
       <BrowserRouter>
         <div>
-          <Route path="/" exact component={ Root } />
-          <Route path="/login" component={ Login } />
-          <Route path="/blog" component={ Blog } />
+          <Switch>
+            <Route path="/" exact component={ Root } />
+            <Route path="/login" exact component={ Login } />
+            <Route path="/blog" exact component={ BlogPosts } />
+            <Route path="/blog/create" exact component={ BlogCreate } />
+          </Switch>
         </div>
       </BrowserRouter>
       <Footer/>
