@@ -3,7 +3,7 @@ import '../../styles/style.min.css'
 
 const Contact = () => {
   return(
-    <section class="contact">
+    <section className="contact">
       <article>
         <h3>Contact</h3>
         <div className="contact1">

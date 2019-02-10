@@ -3,9 +3,9 @@ import '../../styles/style.min.css';
 
 const Projects = () => {
   return(
-    <section class="project">
+    <section className="project">
       <h3>Personal Work</h3>
-      <div class="projectStory">
+      <div className="projectStory">
         <article>
           <h3>Crowd Vote</h3>
           <p>
@@ -28,7 +28,7 @@ const Projects = () => {
           <a href="https://github.com/ryanj14/hangman">Hangman Github Repo</a>  
         </article>
       </div>
-      <div class="projectStory">
+      <div className="projectStory">
         <article>
           <h3>Craigslist Clone</h3>
           <p>

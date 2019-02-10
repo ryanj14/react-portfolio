@@ -3,9 +3,9 @@ import '../../styles/style.min.css';
 
 const Skills = () => {
   return(
-    <section class="skills">
+    <section className="skills">
       <h3>Skills</h3>
-      <article class="skillsGrid">
+      <article className="skillsGrid">
         <figure>
             <img src={require("../../img/HTML5_Badge.png")} alt="HTML5 logo"></img>
             <figcaption>HTML5</figcaption>

@@ -4,7 +4,7 @@ import undraw from "../../img/undraw_developer_activity_bv83.png";
 
 const Title = () => {
   return(
-    <section class="title">
+    <section className="title">
       <img src={undraw} alt="Undraw developer activity"></img>
       <article>
         <h3>Hi, I'm Ryan. I'm a full-stacks developer.</h3>
