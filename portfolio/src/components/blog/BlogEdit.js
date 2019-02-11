@@ -6,7 +6,8 @@ import {
   blog,
   date,
   editBlogPost,
-  fetchBlogPost
+  fetchBlogPost,
+  deleteBlogPost
 } from '../../actions';
 
 class BlogEdit extends React.Component {
@@ -15,6 +16,10 @@ class BlogEdit extends React.Component {
     this.props.fetchBlogPost(this.props.match.params.id);
     let d = Date().toString();
     this.props.date(d);
+  }
+
+  handleDelete() {
+    this.props.deleteBlogPost(this.props.match.params.id);
   }
 
   handleChange = (e) => {
@@ -66,6 +71,12 @@ class BlogEdit extends React.Component {
         >
           Submit
         </button>
+        <button 
+          className="ui button" 
+          onClick={ this.handleDelete }
+        >
+          Delete
+        </button>
       </form>
     );
   }
@@ -78,4 +89,4 @@ const mapStateToProps = (state, ownProps) => {
   };
 };
 
-export default connect(mapStateToProps, { title, author, blog, date, editBlogPost, fetchBlogPost })(BlogEdit);
+export default connect(mapStateToProps, { title, author, blog, date, editBlogPost, fetchBlogPost, deleteBlogPost })(BlogEdit);
