@@ -6,7 +6,8 @@ import {
   BLOG,
   DATE,
   CREATE_POST,
-  FETCH_POSTS
+  FETCH_POSTS,
+  FETCH_POST
 } from './types';
 import { login , blogs } from '../api';
 
@@ -61,6 +62,11 @@ export const fetchBlogPosts = () => async dispatch => {
   const response = await blogs.get('/blog');
   dispatch({ type: FETCH_POSTS, payload: response.data });
 };
+
+export const fetchBlogPost = (id) => async dispatch => {
+  const response = await blogs.get(`/blog/${id}`);
+  dispatch({ type: FETCH_POST, payload: response.data });
+}
 
 export const checkUser = ( user, password ) => dispatch => {
   login({
