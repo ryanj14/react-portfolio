@@ -8,11 +8,10 @@ I'm not using Redux-form so everything is in an uncontrolled state, in regards t
 The technologies being used:
 
 - JSON server: prototyping my API
-- Redux/React-redux: Storing them into a state/object for better handling
-- lodash: 
-  - I use the GET call and store the results into an array
-  - Omit to remove an entry from my object
-- PHP: Login functionality just for me so no one else can create a blog.
+- Redux/React-redux: Storing them into a state/object for better handling.
+- Lodash: Object handling.
+- Axios: HTTP request handling.
+- PHP: Login functionality just for me so no one else can create a blog posts.
 
 Things I want to possibly add:
   - MySQL: Overkill this login functionality and check to see if my login credentials match on the database.
