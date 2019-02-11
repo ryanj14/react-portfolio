@@ -12,6 +12,7 @@ import {
   DELETE_POST
 } from './types';
 import { login , blogs } from '../api';
+import history from '../history';
 
 export const user = (username) => {
   return {
@@ -58,6 +59,7 @@ export const date = (date) => {
 export const createBlogPost = formValues => async dispatch => {
   const response = await blogs.post('/blog', { ...formValues });
   dispatch({ type: CREATE_POST, payload: response.data });
+  history.push("/blog");
 };
 
 export const fetchBlogPosts = () => async dispatch => {
