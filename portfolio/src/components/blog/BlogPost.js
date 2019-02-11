@@ -10,9 +10,8 @@ class BlogPost extends React.Component {
 
   render() {
     if(!this.props.api) {
-      return <div></div>;
+      return null;
     }
-    console.log(this.props.api);
     const { title, author, blog, date } = this.props.api;
     return (
       <div>

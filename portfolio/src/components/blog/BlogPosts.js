@@ -1,6 +1,7 @@
 import React from 'react';
 import { fetchBlogPosts } from '../../actions';
 import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
 
 class BlogPosts extends React.Component {
 
@@ -13,9 +14,9 @@ class BlogPosts extends React.Component {
       return(
         <div className="item" key={ posts.id }>
           <div className="content">
-            <div className="header">
+            <Link to={ `/blog/${ posts.id }` } className="header">
               { posts.title }
-            </div>
+            </Link>
             <div className="description">
               { posts.date }
             </div>
