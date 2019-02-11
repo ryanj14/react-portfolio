@@ -7,6 +7,7 @@ import Login from './Login';
 import BlogCreate from './blog/BlogCreate';
 import BlogPosts from './blog/BlogPosts';
 import BlogPost from './blog/BlogPost';
+import BlogEdit from './blog/BlogEdit';
 
 const App = () => {
   return(
@@ -20,6 +21,7 @@ const App = () => {
             <Route path="/blog" exact component={ BlogPosts } />
             <Route path="/blog/:id" exact component={ BlogPost } />
             <Route path="/blog/create" exact component={ BlogCreate } />
+            <Route path="/blog/edit/:id" exact component={ BlogEdit } />
           </Switch>
         </div>
       </BrowserRouter>
