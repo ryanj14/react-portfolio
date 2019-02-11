@@ -8,7 +8,8 @@ import {
   CREATE_POST,
   FETCH_POSTS,
   FETCH_POST,
-  EDIT_POST
+  EDIT_POST,
+  DELETE_POST
 } from './types';
 import { login , blogs } from '../api';
 
@@ -72,6 +73,11 @@ export const fetchBlogPost = (id) => async dispatch => {
 export const editBlogPost = (id, formValues) => async dispatch => {
   const response = await blogs.patch(`/blog/${id}`, formValues);
   dispatch({ type: EDIT_POST, payload: response.data });
+}
+
+export const deleteBlogPost = (id) => async dispatch => {
+  await blogs.delete(`/blog/${id}`);
+  dispatch({ type: DELETE_POST, payload: id });
 }
 
 export const checkUser = ( user, password ) => dispatch => {

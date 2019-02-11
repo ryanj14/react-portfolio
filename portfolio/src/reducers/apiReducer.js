@@ -3,7 +3,8 @@ import {
   CREATE_POST,
   FETCH_POSTS,
   FETCH_POST,
-  EDIT_POST
+  EDIT_POST,
+  DELETE_POST
 } from '../actions/types';
 
 export default (state = {}, action) => {
@@ -16,6 +17,8 @@ export default (state = {}, action) => {
       return { ...state, [action.payload.id]: action.payload };
     case EDIT_POST:
       return { ...state, [action.payload.id]: action.payload };
+    case DELETE_POST:
+      return _.omit(state, action.payload);
     default:
       return state;
   }
