@@ -13,9 +13,9 @@ import history from '../history';
 const App = () => {
   return(
     <div>
-      <NavBar/>
       <Router history={ history }>
         <div>
+          <NavBar/>
           <Switch>
             <Route path="/" exact component={ Root } />
             <Route path="/login" component={ Login } />
