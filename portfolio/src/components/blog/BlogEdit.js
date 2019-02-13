@@ -9,10 +9,15 @@ import {
   fetchBlogPost,
   deleteBlogPost
 } from '../../actions';
+import history from '../../history';
 
 class BlogEdit extends React.Component {
 
   componentDidMount() {
+    let signedIn = this.props.auth.isSignedIn;
+    if(signedIn === false) {
+      history.push('/blog');
+    }
     this.props.fetchBlogPost(this.props.match.params.id);
     let d = Date().toString();
     this.props.date(d);
@@ -37,7 +42,6 @@ class BlogEdit extends React.Component {
     if(!this.props.api) {
       return null;
     }
-    console.log(this.props.blogInfo);
     return (
       <form className="ui form">
         <div className="field">
@@ -86,7 +90,8 @@ class BlogEdit extends React.Component {
 const mapStateToProps = (state, ownProps) => {
   return {
     api: state.api[ownProps.match.params.id],
-    blogInfo: state.blog
+    blogInfo: state.blog,
+    auth: state.auth
   };
 };
 
