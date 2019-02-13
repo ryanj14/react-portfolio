@@ -7,10 +7,15 @@ import {
   date,
   createBlogPost
 } from '../../actions';
+import history from '../../history';
 
 class BlogCreate extends React.Component {
 
   componentDidMount() {
+    let signedIn = this.props.auth.isSignedIn;
+    if(signedIn === false) {
+      history.push('/blog');
+    }
     let d = Date().toString();
     this.props.date(d);
   }
@@ -59,7 +64,8 @@ class BlogCreate extends React.Component {
 
 const mapStateToProps = (state) => {
   return {
-    blogInfo: state.blog
+    blogInfo: state.blog,
+    auth: state.auth
   };
 }
 
