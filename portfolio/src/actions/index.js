@@ -9,7 +9,8 @@ import {
   FETCH_POSTS,
   FETCH_POST,
   EDIT_POST,
-  DELETE_POST
+  DELETE_POST,
+  SIGN_IN
 } from './types';
 import { login , blogs } from '../api';
 import history from '../history';
