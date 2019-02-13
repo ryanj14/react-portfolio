@@ -59,6 +59,7 @@ export const date = (date) => {
 }
 
 export const signOut = () => {
+  history.push('/blog');
   return {
     type: SIGN_OUT
   };
