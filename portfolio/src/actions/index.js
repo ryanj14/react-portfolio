@@ -87,7 +87,7 @@ export const deleteBlogPost = (id) => async dispatch => {
 export const checkUser = ( user, password ) => dispatch => {
   login.post('/user.php', { user, password })
   .then(function (response) {
-    console.log(response);
+    dispatch({ type: SIGN_IN, payload: response.data });
   })
   .catch(function (error) {
     console.log(error);
