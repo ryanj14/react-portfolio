@@ -16,12 +16,13 @@ The technologies being used:
 - Redux/React-redux: Storing user input into Redux store.
 - Lodash: Object handling.
 - Axios: HTTP request handling.
-- PHP: Login functionality just for me to prevent unauthorized access to create and/or editing my blog posts.
+- PHP: Login functionality just for me. It's to prevent unauthorized access to create and/or editing my blog posts.
 
 Things I want to possibly add:
   - MySQL: Overkill this login functionality and check to see if my login credentials match on the database.
   - Docker/Kurbernetes: Deploy it these way as oppose to using Github pages.
   - Clean look of the blog
+  - JWT authentication
 
 I'm not even sure, at the time of writing this, it's possible for my blog can do http requests from Github pages.
 
