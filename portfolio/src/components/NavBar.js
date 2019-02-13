@@ -2,11 +2,24 @@ import React from 'react';
 import '../styles/style.min.css';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
+import { signOut } from '../actions';
 
 class NavBar extends React.Component {
 
   renderSignOut() {
-   
+    let signedIn = this.props.isSignedIn.isSignedIn;
+    if(signedIn === true) {
+      return(
+        <button 
+          className="ui primary button"
+          onClick={ this.props.signOut }
+        >
+          Sign Out
+        </button>
+      );
+    } else {
+      return null;
+    }
   }
 
   render() {
@@ -44,6 +57,9 @@ class NavBar extends React.Component {
             <li className="nav-item">
               <Link className="nav-link" to="/blog">Blog</Link>
             </li>
+            <li className="nav-item">
+              { this.renderSignOut() }
+            </li>
           </ul>
         </div>
       </nav>
@@ -57,4 +73,4 @@ const mapStateToProps = (state) => {
   }
 }
 
-export default connect(mapStateToProps)(NavBar);
+export default connect(mapStateToProps, { signOut })(NavBar);

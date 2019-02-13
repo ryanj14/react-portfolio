@@ -10,7 +10,8 @@ import {
   FETCH_POST,
   EDIT_POST,
   DELETE_POST,
-  SIGN_IN
+  SIGN_IN,
+  SIGN_OUT
 } from './types';
 import { login , blogs } from '../api';
 import history from '../history';
@@ -54,6 +55,12 @@ export const date = (date) => {
   return {
     type: DATE,
     payload: date
+  };
+}
+
+export const signOut = () => {
+  return {
+    type: SIGN_OUT
   };
 }
 
