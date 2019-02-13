@@ -12,7 +12,6 @@ class Login extends React.Component {
   }
 
   render() {
-    console.log(this.props.userInfo);
     return(
       <form className="ui form">
         <div className="field">
@@ -44,7 +43,10 @@ class Login extends React.Component {
 }
 
 const mapStateToProps = (state) => {
-  return { userInfo: state.userLogin };
+  return { 
+    userInfo: state.userLogin,
+    isSignedIn: state.auth 
+  };
 }
 
 export default connect(mapStateToProps, { user, password, checkUser })(Login);
