@@ -18,7 +18,8 @@ class BlogEdit extends React.Component {
     this.props.date(d);
   }
 
-  handleDelete() {
+  handleDelete = (e) => {
+    e.preventDefault();
     this.props.deleteBlogPost(this.props.match.params.id);
   }
 

@@ -33,6 +33,9 @@ const NavBar = () => {
           <li className="nav-item">
             <a className="nav-link" href="https://docs.google.com/document/d/1hye3N65a7Ot9HToe-BHYB3jIsWHtZxSJxuMVHP58FEg/edit?usp=sharing">CV</a>
           </li>
+          <li className="nav-item">
+            <Link className="nav-link" to="/blog">Blog</Link>
+          </li>
         </ul>
       </div>
     </nav>

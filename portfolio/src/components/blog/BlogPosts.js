@@ -12,7 +12,7 @@ class BlogPosts extends React.Component {
   renderList() {
     return this.props.api.map(posts => {
       return(
-        <div className="item" key={ posts.id }>
+        <div className="item" key={ posts.id } style={{ display: 'flex', justifyContent: 'space-around'}}>
           <div className="content">
             <Link to={ `/blog/${ posts.id }` } className="header">
               { posts.title }
@@ -21,6 +21,7 @@ class BlogPosts extends React.Component {
               { posts.date }
             </div>
           </div>
+          <Link to={ `/blog/edit/${ posts.id }` } className="ui button primary">Edit</Link>
         </div>
       );
     });
@@ -28,8 +29,13 @@ class BlogPosts extends React.Component {
 
   render() {
     return (
-      <div className="ui relaxed divided list">
-        { this.renderList() }
+      <div>
+        <div className="ui relaxed divided list">
+          { this.renderList() }
+        </div>
+        <Link to="/blog/create" className="ui button primary">
+          Create
+        </Link>
       </div>
     );
   }

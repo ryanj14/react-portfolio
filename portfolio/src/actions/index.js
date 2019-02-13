@@ -75,23 +75,21 @@ export const fetchBlogPost = (id) => async dispatch => {
 export const editBlogPost = (id, formValues) => async dispatch => {
   const response = await blogs.patch(`/blog/${id}`, formValues);
   dispatch({ type: EDIT_POST, payload: response.data });
+  history.push("/blog");
 }
 
 export const deleteBlogPost = (id) => async dispatch => {
   await blogs.delete(`/blog/${id}`);
   dispatch({ type: DELETE_POST, payload: id });
+  history.push('/blog');
 }
 
 export const checkUser = ( user, password ) => dispatch => {
-  login({
-    method: 'post',
-    url: '/user.php',
-    data: {
-      user,
-      password
-    }
+  login.post('/user.php', { user, password })
+  .then(function (response) {
+    console.log(response);
   })
   .catch(function (error) {
-    dispatch(console.log(error));
+    console.log(error);
   });
 }
