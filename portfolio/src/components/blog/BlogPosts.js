@@ -9,6 +9,30 @@ class BlogPosts extends React.Component {
     this.props.fetchBlogPosts();
   }
 
+  renderEdit(id) {
+    let isSignedIn = this.props.auth.isSignedIn;
+    if(isSignedIn === true) {
+      return(
+        <Link to={ `/blog/edit/${ id }` } className="ui button primary">Edit</Link>
+      );
+    } else {
+      return null;
+    }
+  }
+
+  renderCreate() {
+    let isSignedIn = this.props.auth.isSignedIn;
+    if(isSignedIn === true) {
+      return(
+        <Link to="/blog/create" className="ui button primary">
+          Create
+        </Link>
+      );
+    } else {
+      return null;
+    }
+  }
+
   renderList() {
     return this.props.api.map(posts => {
       return(
@@ -21,7 +45,7 @@ class BlogPosts extends React.Component {
               { posts.date }
             </div>
           </div>
-          <Link to={ `/blog/edit/${ posts.id }` } className="ui button primary">Edit</Link>
+          { this.renderEdit(posts.id) }
         </div>
       );
     });
@@ -33,9 +57,7 @@ class BlogPosts extends React.Component {
         <div className="ui relaxed divided list">
           { this.renderList() }
         </div>
-        <Link to="/blog/create" className="ui button primary">
-          Create
-        </Link>
+        { this.renderCreate() }
       </div>
     );
   }
@@ -43,7 +65,8 @@ class BlogPosts extends React.Component {
 
 const mapStateToProps = (state) => {
   return {
-    api: Object.values(state.api)
+    api: Object.values(state.api),
+    auth: state.auth
   }
 }
 

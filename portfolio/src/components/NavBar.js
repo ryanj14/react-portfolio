@@ -7,7 +7,7 @@ import { signOut } from '../actions';
 class NavBar extends React.Component {
 
   renderSignOut() {
-    let signedIn = this.props.isSignedIn.isSignedIn;
+    let signedIn = this.props.auth.isSignedIn;
     if(signedIn === true) {
       return(
         <button 
@@ -23,7 +23,6 @@ class NavBar extends React.Component {
   }
 
   render() {
-    console.log(this.props);
     return (
       <nav className="navbar sticky-top navbar-expand-lg navbar-dark bg-dark">
         <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
@@ -69,7 +68,7 @@ class NavBar extends React.Component {
 
 const mapStateToProps = (state) => {
   return { 
-    isSignedIn: state.auth
+    auth: state.auth
   }
 }
 
