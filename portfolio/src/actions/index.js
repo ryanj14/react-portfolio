@@ -65,30 +65,30 @@ export const signOut = () => {
   };
 }
 
-export const createBlogPost = formValues => async dispatch => {
-  const response = await blogs.post('/blog', { ...formValues });
+export const createBlogPost = formValues => async (dispatch) => {
+  const response = await blogs.post('/db.json', { ...formValues });
   dispatch({ type: CREATE_POST, payload: response.data });
   history.push("/blog");
 };
 
 export const fetchBlogPosts = () => async dispatch => {
-  const response = await blogs.get('/blog');
+  const response = await blogs.get('/db.json');
   dispatch({ type: FETCH_POSTS, payload: response.data });
 };
 
 export const fetchBlogPost = (id) => async dispatch => {
-  const response = await blogs.get(`/blog/${id}`);
+  const response = await blogs.get(`/db.json/${id}`);
   dispatch({ type: FETCH_POST, payload: response.data });
 }
 
 export const editBlogPost = (id, formValues) => async dispatch => {
-  const response = await blogs.patch(`/blog/${id}`, formValues);
+  const response = await blogs.patch(`/db.json/${id}`, formValues);
   dispatch({ type: EDIT_POST, payload: response.data });
   history.push("/blog");
 }
 
 export const deleteBlogPost = (id) => async dispatch => {
-  await blogs.delete(`/blog/${id}`);
+  await blogs.delete(`/db.json/${id}`);
   dispatch({ type: DELETE_POST, payload: id });
   history.push('/blog');
 }

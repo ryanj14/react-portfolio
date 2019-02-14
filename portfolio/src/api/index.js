@@ -5,5 +5,5 @@ export const login = axios.create({
 });
 
 export const blogs = axios.create({
-  baseURL: 'http://localhost:3001'
+  baseURL: 'https://api-81j9nsrzr.now.sh/'
 });

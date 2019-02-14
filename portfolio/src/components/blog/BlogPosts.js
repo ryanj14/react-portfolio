@@ -34,7 +34,7 @@ class BlogPosts extends React.Component {
   }
 
   renderList() {
-    return this.props.api.map(posts => {
+    return this.props.api.map((posts, index) => {
       return(
         <div className="item" key={ posts.id } style={{ display: 'flex', justifyContent: 'space-around'}}>
           <div className="content">
@@ -52,6 +52,7 @@ class BlogPosts extends React.Component {
   }
 
   render() {
+    console.log(this.props.api);
     return (
       <div>
         <div className="ui relaxed divided list">
