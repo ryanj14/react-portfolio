@@ -1,8 +1,9 @@
-Hi, this is my perosnal portfolio. You can find the live version here: https://ryanj14.github.io/react-portfolio/
+Hi, this is my perosnal portfolio. You can find the live version here: https://portfolioryan.herokuapp.com/
 
 It's written in React.js.
 
 I'm currently implementing a blog functionality into my portfolio using RESTful API. It's almost done!
+
 I'm not using Redux-form so everything is in an uncontrolled state, in regards to my form handling.
 
 Known issues:
@@ -12,17 +13,18 @@ Known issues:
 
 The technologies being used:
 
-- JSON server: prototyping my API.
+- JSON server: Prototyping my API.
 - Redux/React-redux: Storing user input into Redux store.
 - Lodash: Object handling.
 - Axios: HTTP request handling.
-- PHP: Login functionality just for me. It's to prevent unauthorized access to create and/or editing my blog posts.
+- PHP: 
+  - Login functionality just for me. It's to prevent unauthorized access to create and/or editing my blog posts.
+  - To handle the API requests
+  - Connects to my MySQL database
+- MySQL: Stores RESTful API and my login info.
+- Heroku: To deploy my React app.
 
 Things I want to possibly add:
-  - MySQL: Overkill this login functionality and check to see if my login credentials match on the database.
-  - Docker/Kurbernetes: Deploy it these way as oppose to using Github pages.
-  - Clean look of the blog
-  - JWT authentication
-
-I'm not even sure, at the time of writing this, it's possible for my blog can do http requests from Github pages.
-
+- Docker/Kurbernetes: Deploy it these way as oppose to using Github pages.
+- The look of the blog
+- JWT authentication
