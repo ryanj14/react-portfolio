@@ -35,19 +35,19 @@ class BlogPosts extends React.Component {
   }
 
   renderList() {
-    console.log(this.props.api[0]);
-    return this.props.api.map((posts, index) => {
+    return this.props.api.map(posts => {
+      console.log(posts);
       return(
         <div className="item" key={ uuidv1() } style={{ display: 'flex', justifyContent: 'space-around'}}>
           <div className="content">
-            <Link to={ `/blog/${ posts[index].id }` } className="header">
-              { posts[index].title }
+            <Link to={ `/blog/${ posts.id }` } className="header">
+              { posts.title }
             </Link>
             <div className="description">
-              { posts[index].date }
+              { posts.date }
             </div>
           </div>
-          { this.renderEdit(posts[index].id) }
+          { this.renderEdit(posts.id) }
         </div>
       );
     });
