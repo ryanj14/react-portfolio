@@ -5,5 +5,5 @@ export const login = axios.create({
 });
 
 export const blogs = axios.create({
-  baseURL: 'https://api-81j9nsrzr.now.sh/'
+  baseURL: 'http://localhost/react-portfolio/backend'
 });
