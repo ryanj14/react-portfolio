@@ -19,7 +19,7 @@ const App = () => {
           <Switch>
             <Route path="/" exact component={ Root } />
             <Route path="/login" component={ Login } />
-            <Route path="/blog" component={ BlogPosts } />
+            <Route path="/blog" exact component={ BlogPosts } />
             <Route path="/blog/create" exact component={ BlogCreate } />
             <Route path="/blog/:id" exact component={ BlogPost } />
             <Route path="/blog/edit/:id" exact component={ BlogEdit } />

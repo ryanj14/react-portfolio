@@ -2,6 +2,7 @@ import React from 'react';
 import { fetchBlogPosts } from '../../actions';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
+import uuidv1 from 'uuid/v1';
 
 class BlogPosts extends React.Component {
 
@@ -34,25 +35,25 @@ class BlogPosts extends React.Component {
   }
 
   renderList() {
+    console.log(this.props.api[0]);
     return this.props.api.map((posts, index) => {
       return(
-        <div className="item" key={ posts.id } style={{ display: 'flex', justifyContent: 'space-around'}}>
+        <div className="item" key={ uuidv1() } style={{ display: 'flex', justifyContent: 'space-around'}}>
           <div className="content">
-            <Link to={ `/blog/${ posts.id }` } className="header">
-              { posts.title }
+            <Link to={ `/blog/${ posts[index].id }` } className="header">
+              { posts[index].title }
             </Link>
             <div className="description">
-              { posts.date }
+              { posts[index].date }
             </div>
           </div>
-          { this.renderEdit(posts.id) }
+          { this.renderEdit(posts[index].id) }
         </div>
       );
     });
   }
 
   render() {
-    console.log(this.props.api);
     return (
       <div>
         <div className="ui relaxed divided list">
