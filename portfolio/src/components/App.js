@@ -1,4 +1,4 @@
-import { HashRouter, Route, Switch } from 'react-router-dom';
+import { Router, Route, Switch } from 'react-router-dom';
 import React from 'react';
 import NavBar from './NavBar';
 import Root from './portfolio/Root';
@@ -13,7 +13,7 @@ import history from '../history';
 const App = () => {
   return(
     <div>
-      <HashRouter history={ history } >
+      <Router history={ history } >
         <div>
           <NavBar/>
           <Switch>
@@ -25,7 +25,7 @@ const App = () => {
             <Route path="/blog/edit/:id" exact component={ BlogEdit } />
           </Switch>
         </div>
-      </HashRouter>
+      </Router>
       <Footer/>
     </div>
   );
