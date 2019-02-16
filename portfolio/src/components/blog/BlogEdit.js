@@ -42,7 +42,6 @@ class BlogEdit extends React.Component {
     if(!this.props.api) {
       return null;
     }
-    console.log(this.props.api);
     return (
       <div className="ui segment" style={{ margin: "5%"}}>
         <form className="ui form">
