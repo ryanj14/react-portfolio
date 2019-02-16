@@ -3,6 +3,7 @@ import { fetchBlogPosts } from '../../actions';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import uuidv1 from 'uuid/v1';
+import '../../styles/card.min.css';
 
 class BlogPosts extends React.Component {
 
@@ -41,7 +42,7 @@ class BlogPosts extends React.Component {
     return this.props.api.map(posts => {
       console.log(posts);
       return(
-        <div className="item" key={ uuidv1() } style={{ display: 'flex', justifyContent: 'space-around'}}>
+        <div className="ui raised link card" key={ uuidv1() } style={{ marginLeft: 'auto', marginRight: 'auto' }}>
           <div className="content">
             <Link to={ `/blog/${ posts.id }` } className="header">
               { posts.title }
@@ -51,6 +52,11 @@ class BlogPosts extends React.Component {
             </div>
           </div>
           { this.renderEdit(posts.id) }
+          <div className="extra content">
+            <div className="right floated author">
+              Ryan Joseph
+            </div>
+          </div>
         </div>
       );
     });
@@ -59,7 +65,7 @@ class BlogPosts extends React.Component {
   render() {
     return (
       <div>
-        <div className="ui relaxed divided list">
+        <div className="ui relaxed divided list" style={{ margin: '3%'}}>
           { this.renderList() }
         </div>
         { this.renderCreate() }
