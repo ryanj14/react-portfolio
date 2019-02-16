@@ -8,9 +8,6 @@ import '../../styles/card.min.css';
 class BlogPosts extends React.Component {
 
   componentDidMount() {
-    if(!this.props.api) {
-      return;
-    }
     this.props.fetchBlogPosts();
   }
 
@@ -42,7 +39,12 @@ class BlogPosts extends React.Component {
     return this.props.api.map(posts => {
       console.log(posts);
       return(
-        <div className="ui raised link card" key={ uuidv1() } style={{ marginLeft: 'auto', marginRight: 'auto' }}>
+        <Link 
+          className="ui raised link card" 
+          key={ uuidv1() } 
+          style={{ marginLeft: 'auto', marginRight: 'auto' }}
+          to={ `/blog/${ posts.id }` }
+        >
           <div className="content">
             <Link to={ `/blog/${ posts.id }` } className="header">
               { posts.title }
@@ -57,7 +59,7 @@ class BlogPosts extends React.Component {
               Ryan Joseph
             </div>
           </div>
-        </div>
+        </Link>
       );
     });
   }
