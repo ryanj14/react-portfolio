@@ -53,8 +53,10 @@ class BlogPosts extends React.Component {
               { posts.blogDate }
             </div>
           </div>
-          { this.renderEdit(posts.id) }
           <div className="extra content">
+            <div className="left floated">
+              { this.renderEdit(posts.id) }
+            </div>
             <div className="right floated author">
               Ryan Joseph
             </div>

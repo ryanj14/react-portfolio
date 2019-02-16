@@ -10,12 +10,16 @@ class NavBar extends React.Component {
     let signedIn = this.props.auth.isSignedIn;
     if(signedIn === true) {
       return(
-        <button 
-          className="ui primary button"
-          onClick={ this.props.signOut }
-        >
-          Sign Out
-        </button>
+        <div>
+          <Link className="ui primary button" to="/blog/create">Write a post</Link>
+          <button 
+            className="ui red button"
+            onClick={ this.props.signOut }
+          >
+            Sign Out
+          </button>
+        </div>
+
       );
     } else {
       return null;
@@ -57,9 +61,9 @@ class NavBar extends React.Component {
               <Link className="nav-link" to="/blog">Blog</Link>
             </li>
           </ul>
-          <li className="nav-item">
+          <div className="nav-item">
             { this.renderSignOut() }
-          </li>
+          </div>
         </div>
       </nav>
     );
