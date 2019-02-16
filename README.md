@@ -16,12 +16,12 @@ The technologies being used:
 - JSON server: Prototyping the API
 - Redux/React-redux
 - Lodash: Object handling
-- Axios: HTTP request handling
+- Axios
 - PHP: 
   - Login functionality: It's to prevent unauthorized access to create and/or editing my blog posts.
   - Handles the HTTP requests
   - Handles transactions between client and database
-- MySQL: Stores RESTful API and my login info.
+- MySQL: Stores blog posts.
 - Heroku: Deployment of React app.
 - Semantic UI and Bootstrap: Styling the blog.
 
