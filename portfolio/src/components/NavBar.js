@@ -56,10 +56,10 @@ class NavBar extends React.Component {
             <li className="nav-item">
               <Link className="nav-link" to="/blog">Blog</Link>
             </li>
-            <li className="nav-item">
-              { this.renderSignOut() }
-            </li>
           </ul>
+          <li className="nav-item">
+            { this.renderSignOut() }
+          </li>
         </div>
       </nav>
     );
