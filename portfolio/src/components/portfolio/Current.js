@@ -8,11 +8,9 @@ const Current = () => {
         <h3>Current</h3>
         <div className="currentStory">
             <p>
-              Webapp - I'm currently working on a coffee webapp with my good friend Akemi. 
-              We're using technologies such as React.js, Redux, and Firebase.
-            </p>
-            <p>
-              Python - Learning it for AI and machine learning.
+              Personal blog - I'm using a RESTful API approach with the blog design.
+              The blog is currently up but still in development.
+              Checkout the Github repo!
             </p>
         </div>
       </article>
