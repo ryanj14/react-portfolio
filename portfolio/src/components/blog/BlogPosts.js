@@ -37,7 +37,6 @@ class BlogPosts extends React.Component {
 
   renderList() {
     return this.props.api.map(posts => {
-      console.log(posts);
       return(
         <Link 
           className="ui raised link card" 
@@ -46,9 +45,9 @@ class BlogPosts extends React.Component {
           to={ `/blog/${ posts.id }` }
         >
           <div className="content">
-            <Link to={ `/blog/${ posts.id }` } className="header">
+            <div className="header">
               { posts.title }
-            </Link>
+            </div>
             <div className="description">
               { posts.blogDate }
             </div>
