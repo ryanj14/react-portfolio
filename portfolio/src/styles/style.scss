@@ -92,6 +92,9 @@ figcaption {
       width: 100px;
       height: 64px;
     }
+    figure {
+      margin: 0;
+    }
   }
 }
 
@@ -166,9 +169,6 @@ figcaption {
     -webkit-box-direction: normal;
     -ms-flex-direction: column;
     flex-direction: column;
-    h3 {
-      padding-top: 0;
-    }
     div {
       padding-left: 5%;
       margin-bottom: 2%;

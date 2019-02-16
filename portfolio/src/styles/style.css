@@ -112,6 +112,10 @@ figcaption {
   height: 64px;
 }
 
+.skills .skillsGrid figure {
+  margin: 0;
+}
+
 .projectStory {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -202,10 +206,6 @@ figcaption {
   -webkit-box-direction: normal;
   -ms-flex-direction: column;
   flex-direction: column;
-}
-
-.contact article h3 {
-  padding-top: 0;
 }
 
 .contact article div {

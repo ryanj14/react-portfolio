@@ -17,7 +17,9 @@ const store = createStore(
 );
 
 store.subscribe(() => {
-  saveState(store.getState());
+  saveState({
+    auth: store.getState().auth
+  });
 });
 
 ReactDOM.render(

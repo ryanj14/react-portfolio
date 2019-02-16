@@ -42,6 +42,7 @@ class BlogEdit extends React.Component {
     if(!this.props.api) {
       return null;
     }
+    console.log(this.props.api);
     return (
       <form className="ui form">
         <div className="field">
@@ -57,7 +58,7 @@ class BlogEdit extends React.Component {
           <label>Blog</label>
           <textarea
             onChange={ e => this.props.blog(e.target.value) }
-            defaultValue={ this.props.api.blog }
+            defaultValue={ this.props.api.body }
           ></textarea>
         </div>
         <div className="field">

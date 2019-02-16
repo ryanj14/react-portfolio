@@ -7,6 +7,9 @@ import uuidv1 from 'uuid/v1';
 class BlogPosts extends React.Component {
 
   componentDidMount() {
+    if(!this.props.api) {
+      return;
+    }
     this.props.fetchBlogPosts();
   }
 
@@ -44,7 +47,7 @@ class BlogPosts extends React.Component {
               { posts.title }
             </Link>
             <div className="description">
-              { posts.date }
+              { posts.blogDate }
             </div>
           </div>
           { this.renderEdit(posts.id) }
