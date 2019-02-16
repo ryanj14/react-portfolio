@@ -25,39 +25,54 @@ class BlogCreate extends React.Component {
     this.props.createBlogPost(this.props.blogInfo);
   }
 
+  handleCancel() {
+    history.push('/blog');
+  }
+
   render() {
     return (
-      <form className="ui form">
-        <div className="field">
-          <label>Title</label>
-          <input 
-            type="text" 
-            name="title" 
-            onChange={ e => this.props.title(e.target.value) }
-          />
+      <div className="ui segment" style={{ margin: "5%"}}>
+        <form className="ui form">
+        <h4 className="ui dividing header">Create Post</h4>
+        <div className="two fields">
+          <div className="field">
+            <label>Title</label>
+            <input 
+              type="text" 
+              name="title" 
+              onChange={ e => this.props.title(e.target.value) }
+            />
+          </div>
+          <div className="field">
+            <label>Author</label>
+            <input 
+              type="text" 
+              name="author" 
+              onChange={ e => this.props.author(e.target.value) }
+            />
+          </div>
         </div>
-        <div className="field">
-          <label>Blog</label>
-          <textarea
-            onChange={ e => this.props.blog(e.target.value) }
-          ></textarea>
-        </div>
-        <div className="field">
-          <label>Author</label>
-          <input 
-            type="text" 
-            name="author" 
-            onChange={ e => this.props.author(e.target.value) }
-          />
-        </div>
-        <button 
-          className="ui button" 
-          type="submit"
-          onClick={ e => this.handleFormSubmit(e) }
-        >
-          Submit
-        </button>
-      </form>
+          <div className="field">
+            <label>Body</label>
+            <textarea
+              onChange={ e => this.props.blog(e.target.value) }
+            ></textarea>
+          </div>
+          <button 
+            className="ui button" 
+            type="submit"
+            onClick={ e => this.handleFormSubmit(e) }
+          >
+            Submit
+          </button>
+          <button 
+            className="ui button" 
+            onClick={ this.handleCancel }
+          >
+            Cancel
+          </button>
+        </form>
+      </div>
     );
   }
 }
