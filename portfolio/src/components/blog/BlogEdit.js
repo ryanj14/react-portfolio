@@ -44,46 +44,51 @@ class BlogEdit extends React.Component {
     }
     console.log(this.props.api);
     return (
-      <form className="ui form">
-        <div className="field">
-          <label>Title</label>
-          <input 
-            type="text" 
-            name="title" 
-            defaultValue={ this.props.api.title }
-            onChange={ this.handleChange }
-          />
+      <div className="ui segment" style={{ margin: "5%"}}>
+        <form className="ui form">
+        <h4 className="ui dividing header">Edit Blog</h4>
+        <div className="two fields">
+          <div className="field">
+              <label>Title</label>
+              <input 
+                type="text" 
+                name="title" 
+                defaultValue={ this.props.api.title }
+                onChange={ this.handleChange }
+              />
+            </div>
+            <div className="field">
+              <label>Author</label>
+              <input 
+                type="text" 
+                name="author" 
+                defaultValue={ this.props.api.author }
+                onChange={ e => this.props.author(e.target.value) }
+              />
+            </div>
         </div>
-        <div className="field">
-          <label>Blog</label>
-          <textarea
-            onChange={ e => this.props.blog(e.target.value) }
-            defaultValue={ this.props.api.body }
-          ></textarea>
-        </div>
-        <div className="field">
-          <label>Author</label>
-          <input 
-            type="text" 
-            name="author" 
-            defaultValue={ this.props.api.author }
-            onChange={ e => this.props.author(e.target.value) }
-          />
-        </div>
-        <button 
-          className="ui button" 
-          type="submit"
-          onClick={ e => this.handleFormSubmit(e) }
-        >
-          Submit
-        </button>
-        <button 
-          className="ui button" 
-          onClick={ this.handleDelete }
-        >
-          Delete
-        </button>
-      </form>
+          <div className="field">
+            <label>Body</label>
+            <textarea
+              onChange={ e => this.props.blog(e.target.value) }
+              defaultValue={ this.props.api.body }
+            ></textarea>
+          </div>
+          <button 
+            className="ui button" 
+            type="submit"
+            onClick={ e => this.handleFormSubmit(e) }
+          >
+            Submit
+          </button>
+          <button 
+            className="ui button" 
+            onClick={ this.handleDelete }
+          >
+            Delete
+          </button>
+        </form>
+      </div>
     );
   }
 }
