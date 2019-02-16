@@ -82,7 +82,13 @@ export const fetchBlogPost = (id) => async dispatch => {
 }
 
 export const editBlogPost = (id, formValues) => async dispatch => {
-  const response = await blogs.patch(`/blog_handle.php/${id}`, formValues);
+  const response = await blogs.patch(`/blog_handle.php/${id}`, {
+    id,
+    title: formValues.title,
+    author: formValues.author,
+    date: formValues.date,
+    body: formValues.blog
+  });
   dispatch({ type: EDIT_POST, payload: response.data });
   history.push("/blog");
 }
