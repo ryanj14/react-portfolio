@@ -12,18 +12,21 @@ class BlogPost extends React.Component {
     if(!this.props.api) {
       return null;
     }
-    const { title, author, blog, date } = this.props.api;
+    const { title, author, body, blogDate } = this.props.api;
     return (
-      <div>
+      <div className="ui piled segment" style={{ margin: "5%"}}>
         <div className="ui header">
           { title }
           <div className="sub header">
-            { author } { date }
+            { author }
+          </div>
+          <div className="sub header">
+            { blogDate }
           </div>
         </div>
-        <div className="content">
-          { blog }
-        </div>
+        <p>
+          { body }
+        </p>
       </div>
     );
   }
