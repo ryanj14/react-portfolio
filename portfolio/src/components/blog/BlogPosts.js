@@ -68,11 +68,8 @@ class BlogPosts extends React.Component {
 
   render() {
     return (
-      <div>
-        <div className="ui relaxed divided list" style={{ margin: '3%'}}>
-          { this.renderList() }
-        </div>
-        { this.renderCreate() }
+      <div className="ui relaxed divided list" style={{ margin: '3%'}}>
+        { this.renderList() }
       </div>
     );
   }
