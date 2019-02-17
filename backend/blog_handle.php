@@ -55,7 +55,7 @@
                 $_SERVER['REQUEST_URI']; 
     // This trims the url to leave only the number
     $id  = end(explode('/',trim($link,'/')));
-    $conn = new PDO("mysql:host=127.0.0.1; dbname=assign1", DB_USER, DB_PASSWORD);
+    $conn = new PDO("mysql:host=localhost; dbname=assign1", DB_USER, DB_PASSWORD);
     // set the PDO error mode to exception
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     $sql = "DELETE FROM Blog WHERE id = $id";
