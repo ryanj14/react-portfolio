@@ -68,10 +68,12 @@ class BlogEdit extends React.Component {
         </div>
           <div className="field">
             <label>Body</label>
+            <pre>
             <textarea
               onChange={ e => this.props.blog(e.target.value) }
               defaultValue={ this.props.api.body }
             ></textarea>
+            </pre>
           </div>
           <button 
             className="ui button" 

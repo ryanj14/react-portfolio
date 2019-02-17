@@ -24,7 +24,7 @@ class BlogPost extends React.Component {
             { blogDate }
           </div>
         </div>
-        <p>
+        <p style={{ whiteSpace: "pre-line"}}>
           { body }
         </p>
       </div>
