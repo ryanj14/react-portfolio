@@ -87,7 +87,7 @@ export const editBlogPost = (id, formValues) => async dispatch => {
     title: formValues.title,
     author: formValues.author,
     date: formValues.date,
-    body: formValues.blog
+    blog: formValues.blog
   });
   dispatch({ type: EDIT_POST, payload: response.data });
   history.push("/blog");

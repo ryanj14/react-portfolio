@@ -56,6 +56,7 @@ class BlogCreate extends React.Component {
             <label>Body</label>
             <textarea
               onChange={ e => this.props.blog(e.target.value) }
+              wrap="hard"
             ></textarea>
           </div>
           <button 

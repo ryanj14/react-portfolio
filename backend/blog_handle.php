@@ -12,22 +12,22 @@
   $id = $_POST['id'];
   $title = $_POST['title'];
   $author = $_POST['author'];
-  $body = $_POST['body'];
+  $body = $_POST['blog'];
   $date = $_POST['date'];
 
   if($_SERVER['REQUEST_METHOD'] == 'POST') {
-    try {
       $conn = new PDO("mysql:host=127.0.0.1; dbname=assign1", DB_USER, DB_PASSWORD);
       // set the PDO error mode to exception
       $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-      $sql = "INSERT INTO Blog (`title`, `author`, `body`, `blogDate`)
-              VALUES ('$title', '$author', '$body', '$date')";
+      $stmt = $conn->prepare("INSERT INTO Blog (title, author, body, blogDate)
+              VALUES (?, ?, ?, ?)");
+      $stmt->bindParam(1, $title);
+      $stmt->bindParam(2, $author);
+      $stmt->bindParam(3, $body);
+      $stmt->bindParam(4, $date);
       // use exec() because no results are returned
-      $conn->exec($sql);
+      $stmt->execute();
       echo "New record created successfully";
-      } catch(PDOException $e) {
-        echo $sql . "<br>" . $e->getMessage();
-      }
   } else if($_SERVER['REQUEST_METHOD'] == 'GET') {
     $conn = new PDO("mysql:host=127.0.0.1; dbname=assign1", DB_USER, DB_PASSWORD);
     // set the PDO error mode to exception
