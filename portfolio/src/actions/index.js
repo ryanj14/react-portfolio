@@ -100,7 +100,7 @@ export const deleteBlogPost = (id) => async dispatch => {
 }
 
 export const checkUser = ( user, password ) => dispatch => {
-  login.post('/http_handle.php', { user, password })
+  login.post('/index.php', { user, password })
   .then(function (response) {
     history.push('/blog');
     dispatch({ type: SIGN_IN, payload: response.data });

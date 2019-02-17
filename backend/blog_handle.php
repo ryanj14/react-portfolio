@@ -39,7 +39,7 @@
     $result = $sth->fetchAll();
     echo json_encode($result);
   } else if($_SERVER['REQUEST_METHOD'] == 'PATCH') {
-    $conn = new PDO("mysql:host=127.0.0.1; dbname=assign1", DB_USER, DB_PASSWORD);
+    $conn = new PDO("mysql:host=ec2-23-23-184-76.compute-1.amazonaws.com; dbname=dep00j0csr2bc0", DB_USER, DB_PASSWORD);
     // set the PDO error mode to exception
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     $sql = "UPDATE Blog SET title = '$title', author = '$author', body = '$body', blogDate = '$date' WHERE id = $id";
