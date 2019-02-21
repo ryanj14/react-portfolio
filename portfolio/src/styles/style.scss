@@ -170,7 +170,6 @@ figcaption {
     -ms-flex-direction: column;
     flex-direction: column;
     div {
-      padding-left: 5%;
       margin-bottom: 2%;
       a {
         padding-left: 2%;
@@ -180,12 +179,31 @@ figcaption {
       width: 32px;
       height: 32px;
     }
-    .contact3 {
-      display: -webkit-box;
-      display: -ms-flexbox;
+    .contactWrap {
       display: flex;
-      p {
-        padding-left: 2%;
+      justify-content: center;
+      @media (max-width: 768px) {
+        flex-direction: column;
+      }
+    }
+    .contactLink {
+      width: 40%;
+      @media (max-width: 768px) {
+        width: 100%;
+        padding-left: 5%;
+      }
+    }
+    div.ui.segment {
+      width: 60%;
+      @media (max-width: 768px) {
+        width: 90%;
+        border: none;
+        box-shadow: none;
+      }
+    }
+    button.ui.button {
+      @media (max-width: 768px) {
+        width: 100%;
       }
     }
   }

@@ -11,7 +11,7 @@ class Email extends React.Component {
 
   render() {
     return(
-      <div className="ui segment" style={{ width: "60%" , marginLeft: "auto", marginRight: "auto", marginTop: "2%", marginBottom: "2%"}}>
+      <div className="ui segment" style={{ marginLeft: "auto", marginRight: "auto", marginTop: "2%", marginBottom: "2%"}}>
         <form className="ui form">
         <h4 className="ui dividing header">Email Me!</h4>
         <div className="two fields">
