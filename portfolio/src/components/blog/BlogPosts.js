@@ -36,25 +36,26 @@ class BlogPosts extends React.Component {
   }
 
   renderList() {
-    return this.props.api.map(posts => {
+    console.log(this.props.api);
+    return this.props.api.map(api => {
       return(
         <Link 
           className="ui raised link card" 
           key={ uuidv1() } 
           style={{ marginLeft: 'auto', marginRight: 'auto' }}
-          to={ `/blog/${ posts.id }` }
+          to={ `/blog/${ api.id }` }
         >
           <div className="content">
             <div className="header">
-              { posts.title }
+              { api.title }
             </div>
             <div className="description">
-              { posts.blogDate }
+              { api.blogDate }
             </div>
           </div>
           <div className="extra content">
             <div className="left floated">
-              { this.renderEdit(posts.id) }
+              { this.renderEdit(api.id) }
             </div>
             <div className="right floated author">
               Ryan Joseph
