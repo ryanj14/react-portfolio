@@ -1,5 +1,6 @@
 import React from 'react';
 import '../../styles/style.min.css'
+import Email from './Email';
 
 const Contact = () => {
   return(
@@ -14,10 +15,7 @@ const Contact = () => {
           <img src={require("../../img/linkedin.png")} alt="Linkedin logo"></img>
           <a href="https://www.linkedin.com/in/ryan-joseph-226682163/">linkedin.com/in/ryan-joseph-226682163</a>
         </div>
-        <div className="contact3">
-          <img src={require("../../img/email.png")} alt="Email"></img>
-          <p>josephmryan14@gmail.com</p>
-        </div>
+        <Email />
       </article>
     </section>
   );

@@ -11,7 +11,10 @@ import {
   EDIT_POST,
   DELETE_POST,
   SIGN_IN,
-  SIGN_OUT
+  SIGN_OUT,
+  EMAIL,
+  SUBJECT,
+  BODY
 } from './types';
 import { login , blogs } from '../api';
 import history from '../history';
@@ -58,12 +61,38 @@ export const date = (date) => {
   };
 }
 
+export const email = (email) => {
+  return {
+    type: EMAIL,
+    payload: email
+  };
+}
+
+export const subject = (subject) => {
+  return {
+    type: SUBJECT,
+    payload: subject
+  };
+}
+
+export const body = (body) => {
+  return {
+    type: BODY,
+    payload: body
+  };
+}
+
 export const signOut = () => {
   history.push('/blog');
   return {
     type: SIGN_OUT
   };
 }
+
+export const postEmail = formValues => async (dispatch) => {
+  const response = await login.post('/email.php', { ...formValues });
+  dispatch({ type: CREATE_POST, payload: response.data });
+};
 
 export const createBlogPost = formValues => async (dispatch) => {
   const response = await blogs.post('/blog_handle.php', { ...formValues });

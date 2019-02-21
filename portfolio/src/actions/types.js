@@ -11,3 +11,6 @@ export const EDIT_POST = 'EDIT_POST';
 export const DELETE_POST = 'DELETE_POST';
 export const SIGN_IN = 'SIGN_IN';
 export const SIGN_OUT = 'SIGN_OUT';
+export const EMAIL = 'EMAIL';
+export const SUBJECT = 'SUBJECT';
+export const BODY = 'BODY';
