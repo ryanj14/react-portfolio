@@ -1,12 +1,12 @@
 import React from 'react';
-import { email, subject, body } from '../../actions';
+import { email, subject, body, postEmail } from '../../actions';
 import { connect } from 'react-redux';
 
 class Email extends React.Component {
 
   handleFormSubmit(e) {
     e.preventDefault();
-    console.log(this.props.userEmail);
+    this.props.postEmail(this.props.userEmail);
   }
 
   render() {
@@ -60,4 +60,4 @@ const mapStateToProps = (state) => {
   };
 }
 
-export default connect(mapStateToProps, { email, subject, body })(Email);
+export default connect(mapStateToProps, { email, subject, body, postEmail })(Email);
