@@ -19,7 +19,6 @@ class Email extends React.Component {
   }
 
   render() {
-    alert("Test");
     return(
       <div className="ui segment" style={{ marginLeft: "auto", marginRight: "auto", marginTop: "2%", marginBottom: "2%"}}>
         <form className="ui form">
