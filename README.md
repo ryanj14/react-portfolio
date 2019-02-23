@@ -1,15 +1,14 @@
-Hi, this is my perosnal portfolio. You can find the live version here: https://portfolioryan.herokuapp.com/
+Hi, this is my personal portfolio. You can find the live version here: https://portfolioryan.herokuapp.com/
 
 It's written in React.js.
 
-I'm currently implementing a blog functionality into my portfolio using RESTful conventions. It's done!
+I've created a blog that's in my portfolio. It uses RESTful conventions. You can find it here: https://portfolioryan.herokuapp.com/blog
 
 I'm not using Redux-form so everything is in an uncontrolled state, in regards to form handling.
 
 Known issues:
 - Redux stores an empty object after pressing the back button.
 - No notifications for email sent or error message.
-- Date is not showing in the blog post.
 
 The technologies being used:
 
@@ -26,6 +25,7 @@ The technologies being used:
 - Heroku: Deployment of React app.
 - Semantic UI and Bootstrap: Styling the blog.
 - PHPMailer
+- NPM/Composer
 
 Things I want to possibly add:
 - Docker/Kurbernetes: Deploy it these way as oppose to using Heroku.
