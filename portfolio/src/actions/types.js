@@ -14,3 +14,5 @@ export const SIGN_OUT = 'SIGN_OUT';
 export const EMAIL = 'EMAIL';
 export const SUBJECT = 'SUBJECT';
 export const BODY = 'BODY';
+export const EMAIL_SENT = 'EMAIL_SENT';
+export const EMAIL_ERROR = 'EMAIL_ERROR';

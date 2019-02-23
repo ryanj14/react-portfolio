@@ -1,8 +1,18 @@
 import React from 'react';
-import { email, subject, body, postEmail } from '../../actions';
+import { email, subject, body, postEmail, clearEmail } from '../../actions';
 import { connect } from 'react-redux';
 
 class Email extends React.Component {
+
+  componentDidMount() {
+    let error = this.props.userEmail.error;
+    
+    if(error == null) {
+      console.log("here");
+      alert("Test");
+      this.props.clearEmail();
+    }
+  }
 
   handleFormSubmit(e) {
     e.preventDefault();
@@ -10,6 +20,7 @@ class Email extends React.Component {
   }
 
   render() {
+    alert("Test");
     return(
       <div className="ui segment" style={{ marginLeft: "auto", marginRight: "auto", marginTop: "2%", marginBottom: "2%"}}>
         <form className="ui form">
@@ -60,4 +71,4 @@ const mapStateToProps = (state) => {
   };
 }
 
-export default connect(mapStateToProps, { email, subject, body, postEmail })(Email);
+export default connect(mapStateToProps, { email, subject, body, postEmail, clearEmail })(Email);

@@ -14,7 +14,9 @@ import {
   SIGN_OUT,
   EMAIL,
   SUBJECT,
-  BODY
+  BODY,
+  EMAIL_SENT,
+  EMAIL_ERROR
 } from './types';
 import { login , blogs } from '../api';
 import history from '../history';
@@ -89,9 +91,19 @@ export const signOut = () => {
   };
 }
 
+export const clearEmail = () => {
+  return {
+    type: EMAIL_SENT
+  };
+}
+
 export const postEmail = formValues => async (dispatch) => {
   const response = await login.post('/email.php', { ...formValues });
-  dispatch({ type: CREATE_POST, payload: response.data });
+  if(response.data === "SENT") {
+    dispatch({ type: EMAIL_SENT, payload: response.data });
+  } else {
+    dispatch({ type: EMAIL_ERROR, payload: response.data });
+  }
 };
 
 export const createBlogPost = formValues => async (dispatch) => {
