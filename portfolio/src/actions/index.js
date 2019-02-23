@@ -112,11 +112,13 @@ export const createBlogPost = formValues => async (dispatch) => {
   history.push("/blog");
 };
 
+// This will return all the names from the db to lowercase
 export const fetchBlogPosts = () => async dispatch => {
   const response = await blogs.get('/blog_handle.php');
   dispatch({ type: FETCH_POSTS, payload: response.data });
 };
 
+// This will return all the names from the db to lowercase
 export const fetchBlogPost = (id) => async dispatch => {
   const response = await blogs.get(`/blog_handle.php/${id}`);
   dispatch({ type: FETCH_POST, payload: response.data });
