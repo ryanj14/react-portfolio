@@ -7,9 +7,8 @@ class Email extends React.Component {
   componentDidMount() {
     let error = this.props.userEmail.error;
     
-    if(error == null) {
-      console.log("here");
-      alert("Test");
+    if(error !== null) {
+      alert(error);
       this.props.clearEmail();
     }
   }
@@ -20,7 +19,6 @@ class Email extends React.Component {
   }
 
   render() {
-    alert("Test");
     return(
       <div className="ui segment" style={{ marginLeft: "auto", marginRight: "auto", marginTop: "2%", marginBottom: "2%"}}>
         <form className="ui form">
