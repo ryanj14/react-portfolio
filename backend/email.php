@@ -41,7 +41,7 @@ require 'vendor/autoload.php';
       $mail->Port = 587;                                    // TCP port to connect to
 
       //Recipients
-      $mail->setFrom($_POST['email'], 'Mailer');         // Name is optional
+      $mail->setFrom($_POST['email'], $_POST['email']);         // Name is optional
       $mail->addAddress($_POST['email']);  
 
       $mail->SMTPOptions = array(
