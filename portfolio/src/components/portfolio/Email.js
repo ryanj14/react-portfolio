@@ -7,9 +7,8 @@ class Email extends React.Component {
   componentDidMount() {
     let error = this.props.userEmail.error;
     
-    if(error == null) {
-      console.log("here");
-      alert("Test");
+    if(error !== null) {
+      alert(error);
       this.props.clearEmail();
     }
   }
