@@ -18,7 +18,7 @@ import {
   EMAIL_SENT,
   EMAIL_ERROR
 } from './types';
-import { login , blogs } from '../api';
+import { blogs } from '../api';
 import history from '../history';
 
 export const user = (username) => {
@@ -98,7 +98,7 @@ export const clearEmail = () => {
 }
 
 export const postEmail = formValues => async (dispatch) => {
-  const response = await login.post('/email.php', { ...formValues });
+  const response = await blogs.post('/email.php', { ...formValues });
   if(response.data === "SENT") {
     dispatch({ type: EMAIL_SENT, payload: response.data });
   } else {
@@ -143,7 +143,7 @@ export const deleteBlogPost = (id) => async dispatch => {
 }
 
 export const checkUser = ( user, password ) => dispatch => {
-  login.post('/index.php', { user, password })
+  blogs.post('/index.php', { user, password })
   .then(function (response) {
     history.push('/blog');
     dispatch({ type: SIGN_IN, payload: response.data });
