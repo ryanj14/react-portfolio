@@ -1,4 +1,10 @@
 <?php
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;
+
+//Load Composer's autoloader
+require 'vendor/autoload.php';
+
   // Allow from any origin
   if (isset($_SERVER['HTTP_ORIGIN'])) {
     // Decide if the origin in $_SERVER['HTTP_ORIGIN'] is one
@@ -22,11 +28,37 @@
   }
 
   $_POST = json_decode(file_get_contents('php://input'), true);
-  $message = $_POST['email'] . "\r\n" . $_POST['body'];
-  $success = mail("josephmryan14@gmail.com", $_POST['subject'], $message);
-  if($success) {
-    echo "Success!";
-  } else {
-    echo "Failure, like always...";
+
+  $mail = new PHPMailer(true);                              // Passing `true` enables exceptions
+  try {
+      //Server settings
+      $mail->isSMTP();                                      // Set mailer to use SMTP
+      $mail->Host = 'smtp.gmail.com';                       // Specify main and backup SMTP servers
+      $mail->SMTPAuth = true;                               // Enable SMTP authentication
+      $mail->Username = 'email@email.com';                  // SMTP username
+      $mail->Password = 'supersecretpassword';              // SMTP password
+      $mail->SMTPSecure = 'tls';                            // Enable TLS encryption, `ssl` also accepted
+      $mail->Port = 587;                                    // TCP port to connect to
+
+      //Recipients
+      $mail->setFrom($_POST['email'], 'Mailer');         // Name is optional
+      $mail->addAddress($_POST['email']);  
+
+      $mail->SMTPOptions = array(
+        'ssl' => array(
+            'verify_peer' => false,
+            'verify_peer_name' => false,
+            'allow_self_signed' => true
+        )
+      );
+
+      //Content
+      $mail->Subject = $_POST['subject'];
+      $mail->Body    = $_POST['body'];
+
+      $mail->send();
+      echo 'SENT';
+  } catch (Exception $e) {
+      echo $mail->ErrorInfo;
   }
 ?>
