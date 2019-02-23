@@ -7,7 +7,9 @@ I'm currently implementing a blog functionality into my portfolio using RESTful 
 I'm not using Redux-form so everything is in an uncontrolled state, in regards to form handling.
 
 Known issues:
-- Localstorage stores an array of objects within the array.
+- Redux stores an empty object after pressing the back button.
+- No notifications for email sent or error message.
+- Date is not showing in the blog post.
 
 The technologies being used:
 
@@ -23,6 +25,7 @@ The technologies being used:
 - PostgreSQL: Production database.
 - Heroku: Deployment of React app.
 - Semantic UI and Bootstrap: Styling the blog.
+- PHPMailer
 
 Things I want to possibly add:
 - Docker/Kurbernetes: Deploy it these way as oppose to using Heroku.
