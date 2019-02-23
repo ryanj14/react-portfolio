@@ -54,6 +54,14 @@ const Skills = () => {
           <img src={require("../../img/redux.png")} alt="Redux logo"></img>
           <figcaption>Redux</figcaption>
         </figure>
+        <figure>
+          <img src={require("../../img/heroku.png")} alt="Redux logo"></img>
+          <figcaption>Heroku</figcaption>
+        </figure>
+        <figure>
+          <img src={require("../../img/postgresql.png")} alt="Redux logo"></img>
+          <figcaption>PostGreSQL</figcaption>
+        </figure>
       </article>
     </section>
   );
