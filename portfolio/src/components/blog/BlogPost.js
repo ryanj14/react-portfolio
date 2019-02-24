@@ -12,7 +12,7 @@ class BlogPost extends React.Component {
     if(!this.props.api) {
       return null;
     }
-    const { title, author, body, blogDate } = this.props.api;
+    const { title, author, body, blogdate } = this.props.api;
     return (
       <div className="ui piled segment" style={{ margin: "5%"}}>
         <div className="ui header">
@@ -21,7 +21,7 @@ class BlogPost extends React.Component {
             { author }
           </div>
           <div className="sub header">
-            { blogDate }
+            { blogdate }
           </div>
         </div>
         <p style={{ whiteSpace: "pre-line"}}>

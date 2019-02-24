@@ -36,7 +36,6 @@ class BlogPosts extends React.Component {
   }
 
   renderList() {
-    console.log(this.props.api);
     return this.props.api.map(api => {
       return(
         <Link 
@@ -50,7 +49,7 @@ class BlogPosts extends React.Component {
               { api.title }
             </div>
             <div className="description">
-              { api.blogDate }
+              { api.blogdate }
             </div>
           </div>
           <div className="extra content">
