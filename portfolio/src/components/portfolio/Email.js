@@ -25,27 +25,30 @@ class Email extends React.Component {
         <h4 className="ui dividing header">Email Me!</h4>
         <div className="two fields">
           <div className="field">
-            <label>Email</label>
+            <label htmlFor="email">Email</label>
             <input 
               type="text" 
-              name="email" 
+              name="email"
+              id="email" 
               onChange={ e => this.props.email(e.target.value) }
             />
           </div>
           <div className="field">
-            <label>Subject</label>
+            <label htmlFor="subject">Subject</label>
             <input 
               type="text" 
               name="subject" 
+              id="subject" 
               onChange={ e => this.props.subject(e.target.value) }
             />
           </div>
         </div>
           <div className="field">
-            <label>Body</label>
+            <label htmlFor="body">Body</label>
             <textarea
               wrap="hard"
               name="body"
+              id="body"
               onChange={ e => this.props.body(e.target.value) }
             ></textarea>
           </div>
