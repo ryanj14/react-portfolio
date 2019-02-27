@@ -30,6 +30,25 @@
   $body = $_POST['blog'];
   $date = $_POST['date'];
 
+  function handleHTTPRequest() {
+    switch($_SERVER['REQUEST_METHOD']) {
+      case 'POST':
+        handlePOSTRequest(); 
+        break;
+      case 'GET':
+        handleGETRequest();
+        break;
+      case 'PATCH':
+        handlePATCHRequest();
+        break;
+      case 'DELETE':
+        handleDELETERequest();
+        break;
+      default:
+        echo "Error handleHTTPRequest";
+    }
+  }
+
   function connect_to_db() {
     try {
       $conn = new PDO("mysql:host=" . DB_HOST . "; dbname=" . DB_NAME, DB_USER, DB_PASSWORD);
@@ -42,7 +61,7 @@
     }
   }
 
-  if($_SERVER['REQUEST_METHOD'] == 'POST') {
+  function handlePOSTRequest() {
     $conn = connect_to_db();
     $stmt = $conn->prepare("INSERT INTO Blog (title, author, body, blogDate)
                             VALUES (?, ?, ?, ?)");
@@ -50,10 +69,11 @@
     $stmt->bindParam(2, $author);
     $stmt->bindParam(3, $body);
     $stmt->bindParam(4, $date);
-    // use exec() because no results are returned
     $stmt->execute();
     echo "New record created successfully";
-  } else if($_SERVER['REQUEST_METHOD'] == 'GET') {
+  }
+
+  function handleGETRequest() {
     $conn = connect_to_db();
     $sth = $conn->prepare("SELECT * FROM Blog");
     $sth->execute();
@@ -61,24 +81,25 @@
     /* Fetch all of the remaining rows in the result set */
     $result = $sth->fetchAll();
     echo json_encode($result);
-  } else if($_SERVER['REQUEST_METHOD'] == 'PATCH') {
+  }
+
+  function handlePATCHRequest() {
     $conn = connect_to_db();
     $sql = "UPDATE Blog SET title = '$title', author = '$author', body = '$body', blogDate = '$date' WHERE id = $id";
-    // Prepare statement
     $stmt = $conn->prepare($sql);
-
-    // execute the query
     $stmt->execute();
-  } else if($_SERVER['REQUEST_METHOD'] == 'DELETE') {
+  }
+
+  function handleDELETERequest() {
     // This grabs the current url 
     $link = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? 
-                "https" : "http") . "://" . $_SERVER['HTTP_HOST'] .  
-                $_SERVER['REQUEST_URI']; 
+      "https" : "http") . "://" . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI']; 
     // This trims the url to leave only the number
     $id  = end(explode('/',trim($link,'/')));
     $conn = connect_to_db();
     $sql = "DELETE FROM Blog WHERE id = $id";
-    // Prepare statement
     $conn->exec($sql);
   }
+
+  handleHTTPRequest();
 ?>
